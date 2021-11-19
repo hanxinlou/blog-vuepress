@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Python处理Excel | wanwukeai.ink</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/img/logo.webp">
+    <meta name="description" content="生活明朗 万物可爱">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.38f7a343.css" as="style"><link rel="preload" href="/assets/js/app.a2cae69a.js" as="script"><link rel="preload" href="/assets/js/9.f9736eb3.js" as="script"><link rel="preload" href="/assets/js/1.12a1cddb.js" as="script"><link rel="preload" href="/assets/js/2.f8d3ad04.js" as="script"><link rel="preload" href="/assets/js/22.9ab85166.js" as="script"><link rel="prefetch" href="/assets/js/10.726c6fda.js"><link rel="prefetch" href="/assets/js/11.fdbad876.js"><link rel="prefetch" href="/assets/js/12.8aed5ae0.js"><link rel="prefetch" href="/assets/js/13.c56b58a0.js"><link rel="prefetch" href="/assets/js/14.224f1884.js"><link rel="prefetch" href="/assets/js/15.da9222df.js"><link rel="prefetch" href="/assets/js/16.c8904f98.js"><link rel="prefetch" href="/assets/js/17.28bb049c.js"><link rel="prefetch" href="/assets/js/18.354891f8.js"><link rel="prefetch" href="/assets/js/19.4e89f4ec.js"><link rel="prefetch" href="/assets/js/20.1772f5da.js"><link rel="prefetch" href="/assets/js/21.a77a44cc.js"><link rel="prefetch" href="/assets/js/23.d5f36ebd.js"><link rel="prefetch" href="/assets/js/24.35f435b1.js"><link rel="prefetch" href="/assets/js/25.9c5424f7.js"><link rel="prefetch" href="/assets/js/26.f414c443.js"><link rel="prefetch" href="/assets/js/4.06636a45.js"><link rel="prefetch" href="/assets/js/5.c2302c5e.js"><link rel="prefetch" href="/assets/js/6.cac9710c.js"><link rel="prefetch" href="/assets/js/7.021d5957.js"><link rel="prefetch" href="/assets/js/8.48168461.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.38f7a343.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="theme-container" class="theme-container post-container no-sidebar" data-v-49dadf63><header class="navbar invert" data-v-49dadf63><a href="/" class="home-link router-link-active"><span class="site-name"> $ cd /home/ </span></a> <div class="links"><nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link ov-parent ov-hover"><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-43.52 -43.52 599.04 599.04" fill="currentColor" class="ov-icon ov-wrench ov-hover" style="font-size:1.2em;"><path d="M489.2 287.9h-27.4c-2.6 0-4.6 2-4.6 4.6v32h-36.6V146.2c0-2.6-2-4.6-4.6-4.6h-27.4c-2.6 0-4.6 2-4.6 4.6v32h-36.6v-32c0-2.6-2-4.6-4.6-4.6h-27.4c-2.6 0-4.6 2-4.6 4.6v32h-36.6v-32c0-6-8-4.6-11.7-4.6v-38c8.3-2 17.1-3.4 25.7-3.4 10.9 0 20.9 4.3 31.4 4.3 4.6 0 27.7-1.1 27.7-8v-60c0-2.6-2-4.6-4.6-4.6-5.1 0-15.1 4.3-24 4.3-9.7 0-20.9-4.3-32.6-4.3-8 0-16 1.1-23.7 2.9v-4.9c5.4-2.6 9.1-8.3 9.1-14.3 0-20.7-31.4-20.8-31.4 0 0 6 3.7 11.7 9.1 14.3v111.7c-3.7 0-11.7-1.4-11.7 4.6v32h-36.6v-32c0-2.6-2-4.6-4.6-4.6h-27.4c-2.6 0-4.6 2-4.6 4.6v32H128v-32c0-2.6-2-4.6-4.6-4.6H96c-2.6 0-4.6 2-4.6 4.6v178.3H54.8v-32c0-2.6-2-4.6-4.6-4.6H22.8c-2.6 0-4.6 2-4.6 4.6V512h182.9v-96c0-72.6 109.7-72.6 109.7 0v96h182.9V292.5c.1-2.6-1.9-4.6-4.5-4.6zm-288.1-4.5c0 2.6-2 4.6-4.6 4.6h-27.4c-2.6 0-4.6-2-4.6-4.6v-64c0-2.6 2-4.6 4.6-4.6h27.4c2.6 0 4.6 2 4.6 4.6v64zm146.4 0c0 2.6-2 4.6-4.6 4.6h-27.4c-2.6 0-4.6-2-4.6-4.6v-64c0-2.6 2-4.6 4.6-4.6h27.4c2.6 0 4.6 2 4.6 4.6v64z"/></svg>
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link ov-parent ov-hover"><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-3.2 -3.2 38.4 38.4" fill="currentColor" class="ov-icon ov-wrench ov-hover" style="font-size:1.2em;"><path d="M26.047 12.197c-1.828 0-2.844 1.355-3.057 2.824h6.147c-.167-1.401-1.157-2.819-3.089-2.819zm-3.011 4.83c.313 1.541 1.589 2.624 3.376 2.624.963 0 2.359-.359 3.176-1.219l1.568 1.803c-1.416 1.479-3.536 1.901-4.984 1.901-3.521 0-6.265-2.543-6.265-6.147 0-3.375 2.525-6.156 6.093-6.156 3.448 0 6 2.64 6 6.136v1.02h-8.964zm-8.651 5.104v-7.589c0-1.296-.579-2.047-1.787-2.047-1.083 0-1.801.781-2.287 1.344v8.317H7.176v-7.599c0-1.303-.552-2.041-1.756-2.041-1.083 0-1.833.781-2.291 1.344v8.317H-.002V10.01h3.136v1.531c.531-.615 1.733-1.677 3.609-1.677 1.667 0 2.796.699 3.301 2.12.703-1.015 2-2.12 3.88-2.12 2.271 0 3.589 1.344 3.589 3.948v8.324h-3.136l.005-.011z"/></svg>
+  About
+</a></div><div class="nav-item"><a href="/tags/" class="nav-link ov-parent ov-hover"><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-43.52 -43.52 599.04 599.04" fill="currentColor" class="ov-icon ov-wrench ov-hover" style="font-size:1.2em;"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 010 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>
+  Tags
+</a></div><div class="nav-item"><a href="/links/" class="nav-link ov-parent ov-hover"><svg aria-hidden="true" width="19.2" height="19.2" viewBox="0 0 20 20" fill="currentColor" class="ov-icon ov-wrench ov-hover" style="font-size:1.2em;"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"/></svg>
+  Links
+</a></div><div class="nav-item"><a href="/todo/" class="nav-link ov-parent ov-hover"><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-75.52 -43.52 599.04 599.04" fill="currentColor" class="ov-icon ov-wrench ov-hover" style="font-size:1.2em;"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"/></svg>
+  Todo
+</a></div> <div class="nav-item"><a class="nav-link ov-parent ov-hover" style="cursor: pointer"><svg aria-hidden="true" width="19.2" height="19.2" viewBox="0 0 24 24" fill="currentColor" class="ov-icon ov-wrench ov-hover" style="font-size:1.2em;"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z"/></svg>
+      Search
+    </a></div></nav></div></header> <div class="sidebar-mask" data-v-49dadf63></div> <aside class="sidebar" data-v-49dadf63><div class="personal-info-wrapper" data-v-49dadf63><div class="mobile-hero-avatar" data-v-49dadf63><img src="/img/logo.webp" alt="hero" data-v-49dadf63></div> <p class="mobile-heading" data-v-49dadf63>
+          Hannah
+        </p> <div class="sns-wrapper" data-v-49dadf63><a href="https://github.com/hanxinlou" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" width="0" height="0" viewBox="0 0 0 0" fill="currentColor" class="icon-stack ov-icon" style="font-size:1.2em;"><!----> <svg aria-hidden="true" width="19.2" height="19.2" viewBox="-59.52 -43.52 599.04 599.04" fill="currentColor" class="icon-sns ov-icon ov-inverse" style="font-size:1.2em;"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg></svg></a><a href="https://www.zhihu.com/people/lou-han-xin" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" width="0" height="0" viewBox="0 0 0 0" fill="currentColor" class="icon-stack ov-icon" style="font-size:1.2em;"><!----> <svg aria-hidden="true" width="19.2" height="19.2" viewBox="0 0 24 24" fill="currentColor" class="icon-sns ov-icon ov-inverse" style="font-size:1.2em;"><path fill="none" d="M0 0h24v24H0z"/><path d="M12.344 17.963l-1.688 1.074-2.131-3.35c-.44 1.402-1.172 2.665-2.139 3.825-.402.483-.82.918-1.301 1.375-.155.147-.775.717-.878.82l-1.414-1.414c.139-.139.787-.735.915-.856.43-.408.795-.79 1.142-1.206 1.266-1.518 2.03-3.21 2.137-5.231H3v-2h4V7h-.868c-.689 1.266-1.558 2.222-2.618 2.857L2.486 8.143c1.395-.838 2.425-2.604 3.038-5.36l1.952.434c-.14.633-.303 1.227-.489 1.783H11.5v2H9v4h2.5v2H9.185l3.159 4.963zm3.838-.07L17.298 17H19V7h-4v10h.736l.446.893zM13 5h8v14h-3l-2.5 2-1-2H13V5z"/></svg></svg></a><a href="mailto:hanxinlou@gmail.com" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" width="0" height="0" viewBox="0 0 0 0" fill="currentColor" class="icon-stack ov-icon" style="font-size:1.2em;"><!----> <svg aria-hidden="true" width="19.2" height="19.2" viewBox="-43.52 -43.52 599.04 599.04" fill="currentColor" class="icon-sns ov-icon ov-inverse" style="font-size:1.2em;"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg></svg></a> <a href="https://space.bilibili.com/10280638" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" width="0" height="0" viewBox="0 0 0 0" fill="currentColor" class="icon-stack ov-icon" style="font-size:1.2em;"><!----> <svg aria-hidden="true" width="19.2" height="19.2" viewBox="0 0 24 24" fill="currentColor" class="icon-sns ov-icon ov-inverse" style="font-size:1.2em;"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.223 3.086a1.25 1.25 0 010 1.768L17.08 5.996h1.17A3.75 3.75 0 0122 9.747v7.5a3.75 3.75 0 01-3.75 3.75H5.75A3.75 3.75 0 012 17.247v-7.5a3.75 3.75 0 013.75-3.75h1.166L5.775 4.855a1.25 1.25 0 111.767-1.768l2.652 2.652c.079.079.145.165.198.257h3.213c.053-.092.12-.18.199-.258l2.651-2.652a1.25 1.25 0 011.768 0zm.027 5.42H5.75a1.25 1.25 0 00-1.247 1.157l-.003.094v7.5c0 .659.51 1.199 1.157 1.246l.093.004h12.5a1.25 1.25 0 001.247-1.157l.003-.093v-7.5c0-.69-.56-1.25-1.25-1.25zm-10 2.5c.69 0 1.25.56 1.25 1.25v1.25a1.25 1.25 0 11-2.5 0v-1.25c0-.69.56-1.25 1.25-1.25zm7.5 0c.69 0 1.25.56 1.25 1.25v1.25a1.25 1.25 0 11-2.5 0v-1.25c0-.69.56-1.25 1.25-1.25z"/></svg></svg></a> <!----></div> <hr data-v-49dadf63></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link ov-parent ov-hover"><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-43.52 -43.52 599.04 599.04" fill="currentColor" class="ov-icon ov-wrench ov-hover" style="font-size:1.2em;"><path d="M489.2 287.9h-27.4c-2.6 0-4.6 2-4.6 4.6v32h-36.6V146.2c0-2.6-2-4.6-4.6-4.6h-27.4c-2.6 0-4.6 2-4.6 4.6v32h-36.6v-32c0-2.6-2-4.6-4.6-4.6h-27.4c-2.6 0-4.6 2-4.6 4.6v32h-36.6v-32c0-6-8-4.6-11.7-4.6v-38c8.3-2 17.1-3.4 25.7-3.4 10.9 0 20.9 4.3 31.4 4.3 4.6 0 27.7-1.1 27.7-8v-60c0-2.6-2-4.6-4.6-4.6-5.1 0-15.1 4.3-24 4.3-9.7 0-20.9-4.3-32.6-4.3-8 0-16 1.1-23.7 2.9v-4.9c5.4-2.6 9.1-8.3 9.1-14.3 0-20.7-31.4-20.8-31.4 0 0 6 3.7 11.7 9.1 14.3v111.7c-3.7 0-11.7-1.4-11.7 4.6v32h-36.6v-32c0-2.6-2-4.6-4.6-4.6h-27.4c-2.6 0-4.6 2-4.6 4.6v32H128v-32c0-2.6-2-4.6-4.6-4.6H96c-2.6 0-4.6 2-4.6 4.6v178.3H54.8v-32c0-2.6-2-4.6-4.6-4.6H22.8c-2.6 0-4.6 2-4.6 4.6V512h182.9v-96c0-72.6 109.7-72.6 109.7 0v96h182.9V292.5c.1-2.6-1.9-4.6-4.5-4.6zm-288.1-4.5c0 2.6-2 4.6-4.6 4.6h-27.4c-2.6 0-4.6-2-4.6-4.6v-64c0-2.6 2-4.6 4.6-4.6h27.4c2.6 0 4.6 2 4.6 4.6v64zm146.4 0c0 2.6-2 4.6-4.6 4.6h-27.4c-2.6 0-4.6-2-4.6-4.6v-64c0-2.6 2-4.6 4.6-4.6h27.4c2.6 0 4.6 2 4.6 4.6v64z"/></svg>
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link ov-parent ov-hover"><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-3.2 -3.2 38.4 38.4" fill="currentColor" class="ov-icon ov-wrench ov-hover" style="font-size:1.2em;"><path d="M26.047 12.197c-1.828 0-2.844 1.355-3.057 2.824h6.147c-.167-1.401-1.157-2.819-3.089-2.819zm-3.011 4.83c.313 1.541 1.589 2.624 3.376 2.624.963 0 2.359-.359 3.176-1.219l1.568 1.803c-1.416 1.479-3.536 1.901-4.984 1.901-3.521 0-6.265-2.543-6.265-6.147 0-3.375 2.525-6.156 6.093-6.156 3.448 0 6 2.64 6 6.136v1.02h-8.964zm-8.651 5.104v-7.589c0-1.296-.579-2.047-1.787-2.047-1.083 0-1.801.781-2.287 1.344v8.317H7.176v-7.599c0-1.303-.552-2.041-1.756-2.041-1.083 0-1.833.781-2.291 1.344v8.317H-.002V10.01h3.136v1.531c.531-.615 1.733-1.677 3.609-1.677 1.667 0 2.796.699 3.301 2.12.703-1.015 2-2.12 3.88-2.12 2.271 0 3.589 1.344 3.589 3.948v8.324h-3.136l.005-.011z"/></svg>
+  About
+</a></div><div class="nav-item"><a href="/tags/" class="nav-link ov-parent ov-hover"><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-43.52 -43.52 599.04 599.04" fill="currentColor" class="ov-icon ov-wrench ov-hover" style="font-size:1.2em;"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 010 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>
+  Tags
+</a></div><div class="nav-item"><a href="/links/" class="nav-link ov-parent ov-hover"><svg aria-hidden="true" width="19.2" height="19.2" viewBox="0 0 20 20" fill="currentColor" class="ov-icon ov-wrench ov-hover" style="font-size:1.2em;"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"/></svg>
+  Links
+</a></div><div class="nav-item"><a href="/todo/" class="nav-link ov-parent ov-hover"><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-75.52 -43.52 599.04 599.04" fill="currentColor" class="ov-icon ov-wrench ov-hover" style="font-size:1.2em;"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"/></svg>
+  Todo
+</a></div> <div class="nav-item"><a class="nav-link ov-parent ov-hover" style="cursor: pointer"><svg aria-hidden="true" width="19.2" height="19.2" viewBox="0 0 24 24" fill="currentColor" class="ov-icon ov-wrench ov-hover" style="font-size:1.2em;"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z"/></svg>
+      Search
+    </a></div></nav> <!----> </aside> <div class="content" data-v-49dadf63><div class="post-header style-img" style="background-image:url(/img/header/2021-6-24.webp);" data-v-0bb92cd3><div class="header-mask" style="background:rgba(40, 57, 101, .4);" data-v-0bb92cd3></div> <div class="header-content" data-v-0bb92cd3><div class="tags" data-v-0bb92cd3><span class="tag" data-v-0bb92cd3>
+        Python
+      </span><span class="tag" data-v-0bb92cd3>
+        Excel
+      </span></div> <h1 class="title" data-v-0bb92cd3>
+      Python处理Excel
+    </h1> <h3 class="subtitle" data-v-0bb92cd3>
+      记录一下Python处理Excel的一些常用库及其用法
+    </h3> <div class="icons" data-v-0bb92cd3><div class="icon" data-v-0bb92cd3><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-75.52 -43.52 599.04 599.04" fill="currentColor" class="ov-icon" style="font-size:1.2em;" data-v-0bb92cd3><path d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"/></svg> <span data-v-0bb92cd3>Hannah</span></div> <div class="icon" data-v-0bb92cd3><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-75.52 -43.52 599.04 599.04" fill="currentColor" class="ov-icon" style="font-size:1.2em;" data-v-0bb92cd3><path d="M400 64h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V160h352v298c0 3.3-2.7 6-6 6z"/></svg> <span data-v-0bb92cd3>2021-06-02</span></div> <div class="icon" data-v-0bb92cd3><svg aria-hidden="true" width="19.2" height="19.2" viewBox="0 0 24 24" fill="currentColor" class="ov-icon" style="font-size:1.2em;" data-v-0bb92cd3><path fill="none" d="M0 0h24v24H0z"/><path d="M17.618 5.968l1.453-1.453 1.414 1.414-1.453 1.453a9 9 0 11-1.414-1.414zM12 20a7 7 0 100-14 7 7 0 000 14zM11 8h2v6h-2V8zM8 1h8v2H8V1z"/></svg> <span data-v-0bb92cd3>6 min</span></div></div></div></div> <main class="page"><!----> <div class="theme-content content__default"><h2 id="一、读取xls-xlrd"><a href="#一、读取xls-xlrd" class="header-anchor">#</a> 一、读取xls——xlrd</h2> <p><a href="https://xlrd.readthedocs.io/en/latest/" target="_blank">xlrd 官方文档</a></p> <h3 id="_1-安装"><a href="#_1-安装" class="header-anchor">#</a> 1.安装</h3> <p><code>pip install xlrd</code></p> <h3 id="_2-使用示例"><a href="#_2-使用示例" class="header-anchor">#</a> 2.使用示例</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> xlrd
+
+<span class="token comment"># 打开Excel</span>
+data <span class="token operator">=</span> xlrd<span class="token punctuation">.</span>open_workbook<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span>
+
+<span class="token comment"># 打开第一张表</span>
+table <span class="token operator">=</span> data<span class="token punctuation">.</span>sheets<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 获取表的行数</span>
+nrows <span class="token operator">=</span> table<span class="token punctuation">.</span>nrows
+
+<span class="token comment"># 循环逐行打印</span>
+<span class="token keyword">for</span> row_index <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nrows<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token comment"># 跳过第一行（大多数为表头）</span>
+    <span class="token keyword">if</span> row_index <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">continue</span>
+
+    <span class="token comment"># 获取每一行的值，类型为 list</span>
+    row_value <span class="token operator">=</span> table<span class="token punctuation">.</span>row_values<span class="token punctuation">(</span>row_index<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>row_value<span class="token punctuation">)</span>
+</code></pre></div><h3 id="_3-常用函数"><a href="#_3-常用函数" class="header-anchor">#</a> 3.常用函数</h3> <h4 id="_1-表相关"><a href="#_1-表相关" class="header-anchor">#</a> ① 表相关</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 通过索引顺序获取表对象</span>
+table <span class="token operator">=</span> data<span class="token punctuation">.</span>sheets<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span>sheet_index<span class="token punctuation">]</span>          
+table <span class="token operator">=</span> data<span class="token punctuation">.</span>sheet_by_index<span class="token punctuation">(</span>sheet_index<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 通过表名称名称获取表对象</span>
+table <span class="token operator">=</span> data<span class="token punctuation">.</span>sheet_by_name<span class="token punctuation">(</span>sheet_name<span class="token punctuation">)</span>
+
+<span class="token comment"># 返回工作簿中所有工作表的名字</span>
+names <span class="token operator">=</span> data<span class="token punctuation">.</span>sheet_names<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 检查某个sheet是否导入完毕</span>
+data<span class="token punctuation">.</span>sheet_loaded<span class="token punctuation">(</span>sheet_name <span class="token keyword">or</span> sheet_indx<span class="token punctuation">)</span> 
+</code></pre></div><h4 id="_2-行相关"><a href="#_2-行相关" class="header-anchor">#</a> ② 行相关</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 返回该表中的有效行数</span>
+nrows <span class="token operator">=</span> table<span class="token punctuation">.</span>nrows
+  
+<span class="token comment"># 返回由该行中所有的单元格对象组成的列表</span>
+table<span class="token punctuation">.</span>row<span class="token punctuation">(</span>row_index<span class="token punctuation">)</span>
+table<span class="token punctuation">.</span>row_slice<span class="token punctuation">(</span>row_index<span class="token punctuation">)</span>
+
+<span class="token comment"># 返回由该行中所有单元格的数据组成的列表</span>
+table<span class="token punctuation">.</span>row_values<span class="token punctuation">(</span>row_index<span class="token punctuation">,</span> start_colx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> end_colx <span class="token operator">=</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+
+<span class="token comment">#返回该列的有效单元格长度</span>
+table<span class="token punctuation">.</span>row_len<span class="token punctuation">(</span>row_index<span class="token punctuation">)</span>
+</code></pre></div><h4 id="_3-列相关"><a href="#_3-列相关" class="header-anchor">#</a> ③ 列相关</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 返回列表的有效列数</span>
+ncols <span class="token operator">=</span> table<span class="token punctuation">.</span>ncols
+
+<span class="token comment">#返回由该列中所有的单元格对象组成的列表</span>
+table<span class="token punctuation">.</span>col<span class="token punctuation">(</span>colx<span class="token punctuation">,</span> start_rowx<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> end_rowx<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>  
+table<span class="token punctuation">.</span>col_slice<span class="token punctuation">(</span>colx<span class="token punctuation">,</span> start_rowx<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> end_rowx<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 返回由该列中所有单元格的数据组成的列表</span>
+table<span class="token punctuation">.</span>col_values<span class="token punctuation">(</span>colx<span class="token punctuation">,</span> start_rowx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> end_rowx <span class="token operator">=</span> <span class="token boolean">None</span><span class="token punctuation">)</span>   
+</code></pre></div><h4 id="_4-单元格相关"><a href="#_4-单元格相关" class="header-anchor">#</a> ④ 单元格相关</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 返回单元格对象</span>
+table<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>rowx<span class="token punctuation">,</span>colx<span class="token punctuation">)</span>      
+
+<span class="token comment"># 返回单元格中的值</span>
+table<span class="token punctuation">.</span>cell_value<span class="token punctuation">(</span>rowx<span class="token punctuation">,</span>colx<span class="token punctuation">)</span>
+</code></pre></div><hr> <h2 id="二、写入xls-xlwt"><a href="#二、写入xls-xlwt" class="header-anchor">#</a> 二、写入xls——xlwt</h2> <p><a href="https://xlwt.readthedocs.io/en/latest/" target="_blank">xlwt 官方文档</a></p> <h3 id="_1-安装-2"><a href="#_1-安装-2" class="header-anchor">#</a> 1.安装</h3> <p><code>pip install xlwt</code></p> <h3 id="_2-使用示例-2"><a href="#_2-使用示例-2" class="header-anchor">#</a> 2.使用示例</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> xlwt
+
+<span class="token comment"># 创建工作簿，默认编码为 ASCII，可自定义为其他编码，如下编码为 utf-8</span>
+workbook <span class="token operator">=</span> xlwt<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span>encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 添加工作表</span>
+worksheet <span class="token operator">=</span> workbook<span class="token punctuation">.</span>add_sheet<span class="token punctuation">(</span><span class="token string">'sheet1'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 写入数据</span>
+worksheet<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> label <span class="token operator">=</span> <span class="token string">'test'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 保存文件到 file_path</span>
+workbook<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'test.xls'</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_3-常用函数-2"><a href="#_3-常用函数-2" class="header-anchor">#</a> 3.常用函数</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 通过表名添加表</span>
+worksheet <span class="token operator">=</span> workbook<span class="token punctuation">.</span>add_sheet<span class="token punctuation">(</span>sheet_name<span class="token punctuation">)</span>
+
+<span class="token comment"># 保存文件</span>
+workbook<span class="token punctuation">.</span>save<span class="token punctuation">(</span>filename_or_stream<span class="token punctuation">)</span>
+
+<span class="token comment"># 写入数据，r为行数，c为列数，label为数据，style 为该单元格样式</span>
+worksheet<span class="token punctuation">.</span>write<span class="token punctuation">(</span>r<span class="token punctuation">,</span> c<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token operator">&lt;</span>xlwt<span class="token punctuation">.</span>Style<span class="token punctuation">.</span>XFStyle <span class="token builtin">object</span><span class="token operator">&gt;</span><span class="token punctuation">)</span>
+</code></pre></div><hr> <h2 id="三、读写xlsx-openpyxl"><a href="#三、读写xlsx-openpyxl" class="header-anchor">#</a> 三、读写xlsx——openpyxl</h2> <p><a href="https://openpyxl.readthedocs.io/en/stable/" target="_blank">openpyxl 官方文档</a></p> <h3 id="_1-安装-3"><a href="#_1-安装-3" class="header-anchor">#</a> 1.安装</h3> <p><code>pip install openpyxl</code></p> <h3 id="_2-使用示例-3"><a href="#_2-使用示例-3" class="header-anchor">#</a> 2.使用示例</h3> <h4 id="_1-读取"><a href="#_1-读取" class="header-anchor">#</a> ① 读取</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> openpyxl <span class="token keyword">import</span> load_workbook
+
+<span class="token comment"># 打开Excel</span>
+wb <span class="token operator">=</span> load_workbook<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span>
+
+<span class="token comment"># 获取当前被激活的工作薄</span>
+sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>active  
+
+<span class="token comment"># 获取表的行数和列数</span>
+nrows <span class="token operator">=</span> sheet<span class="token punctuation">.</span>max_row
+ncols <span class="token operator">=</span> sheet<span class="token punctuation">.</span>max_cols
+
+<span class="token comment"># 循环逐个打印</span>
+<span class="token comment"># 下标从1开始计算，从2开始循环略过表头</span>
+<span class="token keyword">for</span> row_index <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> nrows <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> col_index <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>ncols <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        cell <span class="token operator">=</span> sheet<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>row_index<span class="token punctuation">,</span> column<span class="token operator">=</span>col_index<span class="token punctuation">)</span><span class="token punctuation">.</span>value
+        <span class="token keyword">print</span><span class="token punctuation">(</span>cell<span class="token punctuation">)</span>
+
+</code></pre></div><h4 id="_2-写入"><a href="#_2-写入" class="header-anchor">#</a> ② 写入</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> openpyxl <span class="token keyword">import</span> Workbook
+
+<span class="token comment"># 创建工作簿</span>
+wb <span class="token operator">=</span> Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 创建工作表</span>
+sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>create_sheet<span class="token punctuation">(</span><span class="token string">'Sheet1'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 定义标题行（下标从1开始）</span>
+sheet<span class="token punctuation">.</span>cell<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'username'</span><span class="token punctuation">)</span>
+sheet<span class="token punctuation">.</span>cell<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'phone'</span><span class="token punctuation">)</span>
+sheet<span class="token punctuation">.</span>cell<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'remarks'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 将数据以行的形式添加到工作薄中,也可以用cell()循环插入</span>
+insert_data <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">'test1'</span><span class="token punctuation">,</span> <span class="token string">'123456'</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'test2'</span><span class="token punctuation">,</span> <span class="token string">'123457'</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'test3'</span><span class="token punctuation">,</span> <span class="token string">'123458'</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> insert_data<span class="token punctuation">:</span>
+    sheet<span class="token punctuation">.</span>append<span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+
+<span class="token comment"># 3. 保存工作表</span>
+wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'test.xlsx'</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_3-常用函数-3"><a href="#_3-常用函数-3" class="header-anchor">#</a> 3.常用函数</h3> <h4 id="_1-表相关-2"><a href="#_1-表相关-2" class="header-anchor">#</a> ① 表相关</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 新建工作表</span>
+<span class="token comment"># 默认插入到最后</span>
+wb<span class="token punctuation">.</span>create_sheet<span class="token punctuation">(</span>sheet_name<span class="token punctuation">)</span>
+<span class="token comment"># 插入到最前</span>
+wb<span class="token punctuation">.</span>create_sheet<span class="token punctuation">(</span>sheet_name<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 返回一个工作表对象</span>
+wb<span class="token punctuation">[</span>sheet_name<span class="token punctuation">]</span>
+wb<span class="token punctuation">.</span>get_sheet_by_name<span class="token punctuation">(</span>sheet_name<span class="token punctuation">)</span>
+
+<span class="token comment"># 返回所有表名</span>
+wb<span class="token punctuation">.</span>sheetnames
+</code></pre></div><h4 id="_2-行列相关"><a href="#_2-行列相关" class="header-anchor">#</a> ② 行列相关</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 返回最大行</span>
+sheet<span class="token punctuation">.</span>max_row
+
+<span class="token comment"># 返回所有行，可循环访问</span>
+sheet<span class="token punctuation">.</span>rows
+
+<span class="token comment"># 返回最大列</span>
+sheet<span class="token punctuation">.</span>max_column
+
+<span class="token comment"># 返回所有列行，可循环访问</span>
+sheet<span class="token punctuation">.</span>columns
+</code></pre></div><h4 id="_3-单元格相关"><a href="#_3-单元格相关" class="header-anchor">#</a> ③ 单元格相关</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 返回单元格的值</span>
+sheet<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>row_index<span class="token punctuation">,</span> column<span class="token operator">=</span>col_index<span class="token punctuation">)</span><span class="token punctuation">.</span>value
+
+<span class="token comment"># 设置单元格的值</span>
+sheet<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row_index<span class="token punctuation">,</span> col_index<span class="token punctuation">)</span><span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'test'</span>
+sheet<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row_index<span class="token punctuation">,</span> col_index<span class="token punctuation">,</span> <span class="token string">'test'</span><span class="token punctuation">)</span>
+</code></pre></div><hr> <h2 id="四、读写csv-csv"><a href="#四、读写csv-csv" class="header-anchor">#</a> 四、读写csv——csv</h2> <p><a href="https://docs.python.org/zh-cn/2.7/library/csv.html" target="_blank">csv 官方文档（python2.7）</a> <a href="https://docs.python.org/zh-cn/3.8/library/csv.html" target="_blank">csv 官方文档（python3.8）</a></p> <h3 id="_1-使用示例"><a href="#_1-使用示例" class="header-anchor">#</a> 1.使用示例</h3> <h4 id="_1-读取-2"><a href="#_1-读取-2" class="header-anchor">#</a> ① 读取</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> csv
+
+<span class="token comment"># 打开文件</span>
+f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'test.csv'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> f<span class="token punctuation">:</span>
+    <span class="token comment"># 读取文件</span>
+    reader <span class="token operator">=</span> csv<span class="token punctuation">.</span>reader<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> row <span class="token keyword">in</span> reader<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> item <span class="token keyword">in</span> row<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+</code></pre></div><h4 id="_2-写入-2"><a href="#_2-写入-2" class="header-anchor">#</a> ② 写入</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> csv
+
+insert_data <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">'test1'</span><span class="token punctuation">,</span> <span class="token string">'123456'</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'test2'</span><span class="token punctuation">,</span> <span class="token string">'123457'</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'test3'</span><span class="token punctuation">,</span> <span class="token string">'123458'</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span>
+
+<span class="token comment"># 打开文件</span>
+f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'test2.csv'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> f<span class="token punctuation">:</span>
+    <span class="token comment"># 写入数据</span>
+    writer <span class="token operator">=</span> csv<span class="token punctuation">.</span>writer<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> row <span class="token keyword">in</span> insert_data<span class="token punctuation">:</span>
+        writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+</code></pre></div><h3 id="_2-常用函数"><a href="#_2-常用函数" class="header-anchor">#</a> 2. 常用函数</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 常规读取</span>
+reader <span class="token operator">=</span> csv<span class="token punctuation">.</span>reader<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+
+<span class="token comment"># 根据分隔符（如'|'）读取 </span>
+reader <span class="token operator">=</span> csv<span class="token punctuation">.</span>reader<span class="token punctuation">(</span>f<span class="token punctuation">,</span> delimiter<span class="token operator">=</span><span class="token string">'|'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 读取后映射成字典</span>
+reader <span class="token operator">=</span> csv<span class="token punctuation">.</span>DictReader<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+<span class="token keyword">for</span> row <span class="token keyword">in</span> reader<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token string">'username'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> row<span class="token punctuation">[</span><span class="token string">'phone'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> row<span class="token punctuation">[</span><span class="token string">'remarks'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 常规写入</span>
+writer <span class="token operator">=</span> csv<span class="token punctuation">.</span>writer<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+
+<span class="token comment"># 按行写入</span>
+writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+
+<span class="token comment"># 一次性写入所有行</span>
+writer<span class="token punctuation">.</span>writerows<span class="token punctuation">(</span>insert_data<span class="token punctuation">)</span>
+
+<span class="token comment"># 用python字典写入 fieldnames 为表头</span>
+writer <span class="token operator">=</span> csv<span class="token punctuation">.</span>DictWriter<span class="token punctuation">(</span>f<span class="token punctuation">,</span> fieldnames<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'username'</span><span class="token punctuation">,</span> <span class="token string">'phone'</span><span class="token punctuation">,</span> <span class="token string">'remarks'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+writer<span class="token punctuation">.</span>writeheader<span class="token punctuation">(</span><span class="token punctuation">)</span>
+writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'username'</span> <span class="token punctuation">:</span> <span class="token string">'test1'</span><span class="token punctuation">,</span> <span class="token string">'phone'</span><span class="token punctuation">:</span> <span class="token string">'123456'</span><span class="token punctuation">,</span> <span class="token string">'remarks'</span><span class="token punctuation">:</span> <span class="token string">'测试'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/18/2021, 7:47:54 PM</span></div></footer> <!----> <div class="pager"><a href="/post/2021/08/23/oldandnewpagesco-exist/" class="next">
+    Next<br> <span>
+      配置Nginx实现新老框架页面共存
+    </span></a> <a href="/post/2021/06/22/frontendmobileandwebroutingswitch/" class="previous">
+    Previous<br> <span>
+      纯前端实现移动端和网页端路由切换
+    </span></a></div> <!----></main> <ul class="catalog" style="top:0px !important;" data-v-22ae54b0><li class="level-2 toc-link-一、读取xls-xlrd" data-v-22ae54b0>一、读取xls——xlrd</li><li class="level-3 toc-link-_1-安装" data-v-22ae54b0>1.安装</li><li class="level-3 toc-link-_2-使用示例" data-v-22ae54b0>2.使用示例</li><li class="level-3 toc-link-_3-常用函数" data-v-22ae54b0>3.常用函数</li><li class="level-4 toc-link-_1-表相关" data-v-22ae54b0>① 表相关</li><li class="level-4 toc-link-_2-行相关" data-v-22ae54b0>② 行相关</li><li class="level-4 toc-link-_3-列相关" data-v-22ae54b0>③ 列相关</li><li class="level-4 toc-link-_4-单元格相关" data-v-22ae54b0>④ 单元格相关</li><li class="level-2 toc-link-二、写入xls-xlwt" data-v-22ae54b0>二、写入xls——xlwt</li><li class="level-3 toc-link-_1-安装-2" data-v-22ae54b0>1.安装</li><li class="level-3 toc-link-_2-使用示例-2" data-v-22ae54b0>2.使用示例</li><li class="level-3 toc-link-_3-常用函数-2" data-v-22ae54b0>3.常用函数</li><li class="level-2 toc-link-三、读写xlsx-openpyxl" data-v-22ae54b0>三、读写xlsx——openpyxl</li><li class="level-3 toc-link-_1-安装-3" data-v-22ae54b0>1.安装</li><li class="level-3 toc-link-_2-使用示例-3" data-v-22ae54b0>2.使用示例</li><li class="level-4 toc-link-_1-读取" data-v-22ae54b0>① 读取</li><li class="level-4 toc-link-_2-写入" data-v-22ae54b0>② 写入</li><li class="level-3 toc-link-_3-常用函数-3" data-v-22ae54b0>3.常用函数</li><li class="level-4 toc-link-_1-表相关-2" data-v-22ae54b0>① 表相关</li><li class="level-4 toc-link-_2-行列相关" data-v-22ae54b0>② 行列相关</li><li class="level-4 toc-link-_3-单元格相关" data-v-22ae54b0>③ 单元格相关</li><li class="level-2 toc-link-四、读写csv-csv" data-v-22ae54b0>四、读写csv——csv</li><li class="level-3 toc-link-_1-使用示例" data-v-22ae54b0>1.使用示例</li><li class="level-4 toc-link-_1-读取-2" data-v-22ae54b0>① 读取</li><li class="level-4 toc-link-_2-写入-2" data-v-22ae54b0>② 写入</li><li class="level-3 toc-link-_2-常用函数" data-v-22ae54b0>2. 常用函数</li></ul></div> <div class="search-page" data-v-49dadf63><span class="search-close"><svg aria-hidden="true" width="34.56" height="34.56" viewBox="-75.52 -43.52 599.04 599.04" fill="currentColor" class="ov-icon" style="font-size:2.16em;"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg></span> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div> <div class="menu-btn-container" data-v-45ab4ceb data-v-49dadf63><div class="menu-btn-wrapper" data-v-45ab4ceb><div class="menu-btn" data-v-45ab4ceb><div class="menu-btn-icon" style="display:;" data-v-45ab4ceb><span data-v-45ab4ceb></span> <span data-v-45ab4ceb></span> <span data-v-45ab4ceb></span></div> <div class="menu-text" style="display:none;" data-v-45ab4ceb>
+        0
+      </div> <svg class="menu-svg" data-v-45ab4ceb><circle cx="50%" cy="50%" r="48%" class="menu-border" style="stroke-dasharray:0% 314.15926%;" data-v-45ab4ceb></circle></svg></div> <div class="menu-btn-child-wrapper" data-v-45ab4ceb><a role="button" aria-label="Toggle light" title="Toggle light" class="toggle-mode menu-btn-child" data-v-45ab4ceb><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-43.52 -43.52 599.04 599.04" fill="currentColor" class="ov-icon" style="font-size:1.2em;"><path d="M224 96l16-32 32-16-32-16-16-32-16 32-32 16 32 16 16 32zM80 160l26.66-53.33L160 80l-53.34-26.67L80 0 53.34 53.33 0 80l53.34 26.67L80 160zm352 128l-26.66 53.33L352 368l53.34 26.67L432 448l26.66-53.33L512 368l-53.34-26.67L432 288zm70.62-193.77L417.77 9.38C411.53 3.12 403.34 0 395.15 0c-8.19 0-16.38 3.12-22.63 9.38L9.38 372.52c-12.5 12.5-12.5 32.76 0 45.25l84.85 84.85c6.25 6.25 14.44 9.37 22.62 9.37 8.19 0 16.38-3.12 22.63-9.37l363.14-363.15c12.5-12.48 12.5-32.75 0-45.24zM359.45 203.46l-50.91-50.91 86.6-86.6 50.91 50.91-86.6 86.6z"/></svg></a> <div class="menu-btn-child" data-v-45ab4ceb><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-75.52 -43.52 599.04 599.04" fill="currentColor" class="ov-icon" style="font-size:1.2em;" data-v-45ab4ceb><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg></div> <div class="menu-btn-child" data-v-45ab4ceb><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-75.52 -43.52 599.04 599.04" fill="currentColor" class="ov-icon" style="font-size:1.2em;" data-v-45ab4ceb><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"/></svg></div> <div class="menu-btn-child menu-toc-btn" data-v-45ab4ceb><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-43.52 -43.52 599.04 599.04" fill="currentColor" class="ov-icon" style="font-size:1.2em;" data-v-45ab4ceb><path d="M48 48a48 48 0 1048 48 48 48 0 00-48-48zm0 160a48 48 0 1048 48 48 48 0 00-48-48zm0 160a48 48 0 1048 48 48 48 0 00-48-48zm448 16H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zm0-320H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16V80a16 16 0 00-16-16zm0 160H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16z"/></svg></div> <div class="menu-btn-child menu-btn-sidebar" data-v-45ab4ceb><svg aria-hidden="true" width="19.2" height="19.2" viewBox="-1.6 -1.6 19.2 19.2" fill="currentColor" class="ov-icon" style="font-size:1.2em;" data-v-45ab4ceb><path d="M14 2a1 1 0 011 1v10a1 1 0 01-1 1H2a1 1 0 01-1-1V3a1 1 0 011-1h12zM2 1a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V3a2 2 0 00-2-2H2z"/><path d="M3 4a1 1 0 011-1h2a1 1 0 011 1v8a1 1 0 01-1 1H4a1 1 0 01-1-1V4z"/></svg></div></div></div></div> <div class="footer-wrapper footer" data-v-8b59b00c data-v-49dadf63><span data-v-8b59b00c>
+            &copy; <a href="https://github.com/hanxinlou" target="_blank" rel="noopener norefferrer">hanxinlou</a> 2020-2021
+            <br>
+            Powered by <a href="https://vuepress.vuejs.org" target="_blank" rel="noopener norefferrer">VuePress</a> &
+            <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank" rel="noopener norefferrer">Gungnir</a>
+            <br>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener norefferrer">浙ICP备2020034072号-1</a>
+          </span></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a2cae69a.js" defer></script><script src="/assets/js/9.f9736eb3.js" defer></script><script src="/assets/js/1.12a1cddb.js" defer></script><script src="/assets/js/2.f8d3ad04.js" defer></script><script src="/assets/js/22.9ab85166.js" defer></script>
+  </body>
+</html>
