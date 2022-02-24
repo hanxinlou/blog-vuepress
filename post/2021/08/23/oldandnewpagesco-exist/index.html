@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>配置Nginx实现新老框架页面共存 | wanwukeai.ink</title>
-    <meta name="generator" content="VuePress 1.8.2">
+    <meta name="generator" content="VuePress 1.9.7">
     <link rel="icon" href="/img/logo.webp">
     <meta name="description" content="生活明朗 万物可爱">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     
-    <link rel="preload" href="/assets/css/0.styles.40a93272.css" as="style"><link rel="preload" href="/assets/js/app.47a341f0.js" as="script"><link rel="preload" href="/assets/js/9.4003617a.js" as="script"><link rel="preload" href="/assets/js/1.a6555c94.js" as="script"><link rel="preload" href="/assets/js/2.33948fd8.js" as="script"><link rel="preload" href="/assets/js/21.419cf701.js" as="script"><link rel="prefetch" href="/assets/js/10.4527a46e.js"><link rel="prefetch" href="/assets/js/11.ee045b32.js"><link rel="prefetch" href="/assets/js/12.70ba09e7.js"><link rel="prefetch" href="/assets/js/13.ba6a62ca.js"><link rel="prefetch" href="/assets/js/14.6304b681.js"><link rel="prefetch" href="/assets/js/15.3cc9ca31.js"><link rel="prefetch" href="/assets/js/16.cc09cbbb.js"><link rel="prefetch" href="/assets/js/17.686e37a8.js"><link rel="prefetch" href="/assets/js/18.0aa4c4df.js"><link rel="prefetch" href="/assets/js/19.406229a4.js"><link rel="prefetch" href="/assets/js/20.5bc0d087.js"><link rel="prefetch" href="/assets/js/22.fc9679d7.js"><link rel="prefetch" href="/assets/js/23.020c9de8.js"><link rel="prefetch" href="/assets/js/24.38621e5d.js"><link rel="prefetch" href="/assets/js/25.37b0948f.js"><link rel="prefetch" href="/assets/js/26.ab3a43f0.js"><link rel="prefetch" href="/assets/js/27.16e46eb4.js"><link rel="prefetch" href="/assets/js/4.354c5048.js"><link rel="prefetch" href="/assets/js/5.eae40e76.js"><link rel="prefetch" href="/assets/js/6.be09dd7d.js"><link rel="prefetch" href="/assets/js/7.2424f977.js"><link rel="prefetch" href="/assets/js/8.05f2827f.js">
+    <link rel="preload" href="/assets/css/0.styles.40a93272.css" as="style"><link rel="preload" href="/assets/js/app.84408714.js" as="script"><link rel="preload" href="/assets/js/9.e81049ae.js" as="script"><link rel="preload" href="/assets/js/1.f7638bb1.js" as="script"><link rel="preload" href="/assets/js/2.49785e8d.js" as="script"><link rel="preload" href="/assets/js/21.a136129c.js" as="script"><link rel="prefetch" href="/assets/js/10.b8caa58d.js"><link rel="prefetch" href="/assets/js/11.d1c3d315.js"><link rel="prefetch" href="/assets/js/12.6601a8aa.js"><link rel="prefetch" href="/assets/js/13.e5fd2d12.js"><link rel="prefetch" href="/assets/js/14.34180308.js"><link rel="prefetch" href="/assets/js/15.847d565f.js"><link rel="prefetch" href="/assets/js/16.1b9cfaf1.js"><link rel="prefetch" href="/assets/js/17.79b73f14.js"><link rel="prefetch" href="/assets/js/18.9309522c.js"><link rel="prefetch" href="/assets/js/19.7e9c6993.js"><link rel="prefetch" href="/assets/js/20.044d342e.js"><link rel="prefetch" href="/assets/js/22.267499fa.js"><link rel="prefetch" href="/assets/js/23.08bcab86.js"><link rel="prefetch" href="/assets/js/24.b80baf67.js"><link rel="prefetch" href="/assets/js/25.517849ca.js"><link rel="prefetch" href="/assets/js/26.ca5575bb.js"><link rel="prefetch" href="/assets/js/27.63eed1cd.js"><link rel="prefetch" href="/assets/js/28.baa71774.js"><link rel="prefetch" href="/assets/js/4.6ce856c1.js"><link rel="prefetch" href="/assets/js/5.3cb899ad.js"><link rel="prefetch" href="/assets/js/6.42ec360d.js"><link rel="prefetch" href="/assets/js/7.6507f119.js"><link rel="prefetch" href="/assets/js/8.517f6e46.js">
     <link rel="stylesheet" href="/assets/css/0.styles.40a93272.css">
   </head>
   <body>
@@ -100,31 +100,31 @@ root /home/www/;
 <span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token comment">// 本地开发时因为example路由下没有页面，直接重定向到A页面</span>
     <span class="token punctuation">{</span>
-        path<span class="token operator">:</span> <span class="token string">'/example'</span><span class="token punctuation">,</span>
-        redirect<span class="token operator">:</span> <span class="token string">'/example/a'</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/example'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">redirect</span><span class="token operator">:</span> <span class="token string">'/example/a'</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">{</span>
-        path<span class="token operator">:</span> <span class="token string">'/example/a'</span><span class="token punctuation">,</span>
-        name<span class="token operator">:</span> <span class="token string">'ExampleA'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/example/a'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'ExampleA'</span><span class="token punctuation">,</span>
         <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'../views/ExampleA.vue'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        meta<span class="token operator">:</span> <span class="token punctuation">{</span>
-        title<span class="token operator">:</span> <span class="token string">'A页面'</span>
+        <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'A页面'</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">{</span>
-        path<span class="token operator">:</span> <span class="token string">'/example/b'</span><span class="token punctuation">,</span>
-        name<span class="token operator">:</span> <span class="token string">'ExampleB'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/example/b'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'ExampleB'</span><span class="token punctuation">,</span>
         <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'../views/ExampleB.vue'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        meta<span class="token operator">:</span> <span class="token punctuation">{</span>
-        title<span class="token operator">:</span> <span class="token string">'B页面'</span>
+        <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'B页面'</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">]</span>
 
 <span class="token comment">// 采用history模式</span>
 <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">createRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    mode<span class="token operator">:</span> <span class="token string">'history'</span><span class="token punctuation">,</span>
-    history<span class="token operator">:</span> <span class="token function">createWebHistory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'history'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">history</span><span class="token operator">:</span> <span class="token function">createWebHistory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
     routes
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token operator">...</span>
@@ -136,8 +136,8 @@ root /home/www/;
 
 <span class="token comment">// https://vitejs.dev/config/</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-  base<span class="token operator">:</span> <span class="token string">&quot;/example/&quot;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">base</span><span class="token operator">:</span> <span class="token string">&quot;/example/&quot;</span><span class="token punctuation">,</span>
   <span class="token operator">...</span> # 其他配置
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre></div><p>这里的 <code>base</code> 表示 <strong>开发或生产环境服务的公共基础路径</strong>，默认值为<code>'/'</code>，</p> <p>此处需设为Nginx上配置的唯一匹配路由，主要是保证打包后的资源都能正常访问</p> <p>以下搬运Vite官网对该配置字段的介绍：</p> <blockquote><p>如果你需要在嵌套的公共路径下部署项目，只需指定 base 配置项，然后所有资源的路径都将据此配置重写。这个选项也可以通过命令行参数指定，例如 vite build --base=/my/public/path/。</p></blockquote> <blockquote><p>由 JS 引入的资源 URL，CSS 中的 url() 引用以及 .html 文件中引用的资源在构建过程中都会自动调整，以适配此选项。</p></blockquote> <blockquote><p>当然，情况也有例外，当访问过程中需要使用动态连接的 url 时，可以使用全局注入的 import.meta.env.BASE_URL 变量，它的值为公共基础路径。注意，这个变量在构建时会被静态替换，因此，它必须按 import.meta.env.BASE_URL 的原样出现（例如 import.meta.env['BASE_URL'] 是无效的）</p></blockquote> <hr></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/19/2021, 5:57:46 PM</span></div></footer> <!----> <div class="pager"><a href="/post/2021/09/27/frontendi18n/" class="next">
@@ -156,6 +156,6 @@ root /home/www/;
             <br>
             <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener norefferrer">浙ICP备2020034072号-1</a>
           </span></div></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.47a341f0.js" defer></script><script src="/assets/js/9.4003617a.js" defer></script><script src="/assets/js/1.a6555c94.js" defer></script><script src="/assets/js/2.33948fd8.js" defer></script><script src="/assets/js/21.419cf701.js" defer></script>
+    <script src="/assets/js/app.84408714.js" defer></script><script src="/assets/js/9.e81049ae.js" defer></script><script src="/assets/js/1.f7638bb1.js" defer></script><script src="/assets/js/2.49785e8d.js" defer></script><script src="/assets/js/21.a136129c.js" defer></script>
   </body>
 </html>

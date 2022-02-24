@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>前端国际化 | wanwukeai.ink</title>
-    <meta name="generator" content="VuePress 1.8.2">
+    <meta name="generator" content="VuePress 1.9.7">
     <link rel="icon" href="/img/logo.webp">
     <meta name="description" content="生活明朗 万物可爱">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     
-    <link rel="preload" href="/assets/css/0.styles.40a93272.css" as="style"><link rel="preload" href="/assets/js/app.47a341f0.js" as="script"><link rel="preload" href="/assets/js/9.4003617a.js" as="script"><link rel="preload" href="/assets/js/1.a6555c94.js" as="script"><link rel="preload" href="/assets/js/2.33948fd8.js" as="script"><link rel="preload" href="/assets/js/19.406229a4.js" as="script"><link rel="prefetch" href="/assets/js/10.4527a46e.js"><link rel="prefetch" href="/assets/js/11.ee045b32.js"><link rel="prefetch" href="/assets/js/12.70ba09e7.js"><link rel="prefetch" href="/assets/js/13.ba6a62ca.js"><link rel="prefetch" href="/assets/js/14.6304b681.js"><link rel="prefetch" href="/assets/js/15.3cc9ca31.js"><link rel="prefetch" href="/assets/js/16.cc09cbbb.js"><link rel="prefetch" href="/assets/js/17.686e37a8.js"><link rel="prefetch" href="/assets/js/18.0aa4c4df.js"><link rel="prefetch" href="/assets/js/20.5bc0d087.js"><link rel="prefetch" href="/assets/js/21.419cf701.js"><link rel="prefetch" href="/assets/js/22.fc9679d7.js"><link rel="prefetch" href="/assets/js/23.020c9de8.js"><link rel="prefetch" href="/assets/js/24.38621e5d.js"><link rel="prefetch" href="/assets/js/25.37b0948f.js"><link rel="prefetch" href="/assets/js/26.ab3a43f0.js"><link rel="prefetch" href="/assets/js/27.16e46eb4.js"><link rel="prefetch" href="/assets/js/4.354c5048.js"><link rel="prefetch" href="/assets/js/5.eae40e76.js"><link rel="prefetch" href="/assets/js/6.be09dd7d.js"><link rel="prefetch" href="/assets/js/7.2424f977.js"><link rel="prefetch" href="/assets/js/8.05f2827f.js">
+    <link rel="preload" href="/assets/css/0.styles.40a93272.css" as="style"><link rel="preload" href="/assets/js/app.84408714.js" as="script"><link rel="preload" href="/assets/js/9.e81049ae.js" as="script"><link rel="preload" href="/assets/js/1.f7638bb1.js" as="script"><link rel="preload" href="/assets/js/2.49785e8d.js" as="script"><link rel="preload" href="/assets/js/19.7e9c6993.js" as="script"><link rel="prefetch" href="/assets/js/10.b8caa58d.js"><link rel="prefetch" href="/assets/js/11.d1c3d315.js"><link rel="prefetch" href="/assets/js/12.6601a8aa.js"><link rel="prefetch" href="/assets/js/13.e5fd2d12.js"><link rel="prefetch" href="/assets/js/14.34180308.js"><link rel="prefetch" href="/assets/js/15.847d565f.js"><link rel="prefetch" href="/assets/js/16.1b9cfaf1.js"><link rel="prefetch" href="/assets/js/17.79b73f14.js"><link rel="prefetch" href="/assets/js/18.9309522c.js"><link rel="prefetch" href="/assets/js/20.044d342e.js"><link rel="prefetch" href="/assets/js/21.a136129c.js"><link rel="prefetch" href="/assets/js/22.267499fa.js"><link rel="prefetch" href="/assets/js/23.08bcab86.js"><link rel="prefetch" href="/assets/js/24.b80baf67.js"><link rel="prefetch" href="/assets/js/25.517849ca.js"><link rel="prefetch" href="/assets/js/26.ca5575bb.js"><link rel="prefetch" href="/assets/js/27.63eed1cd.js"><link rel="prefetch" href="/assets/js/28.baa71774.js"><link rel="prefetch" href="/assets/js/4.6ce856c1.js"><link rel="prefetch" href="/assets/js/5.3cb899ad.js"><link rel="prefetch" href="/assets/js/6.42ec360d.js"><link rel="prefetch" href="/assets/js/7.6507f119.js"><link rel="prefetch" href="/assets/js/8.517f6e46.js">
     <link rel="stylesheet" href="/assets/css/0.styles.40a93272.css">
   </head>
   <body>
@@ -86,29 +86,29 @@
 
 <span class="token comment">//注册i8n实例并引入语言文件</span>
 <span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token function">createI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  legacy<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 使用Composition API，这里必须设置为false</span>
-  globalInjection<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  global<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  locale<span class="token operator">:</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'language'</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">'zh-CN'</span><span class="token punctuation">,</span>
-  fallbackLocale<span class="token operator">:</span> <span class="token string">'zh-CN'</span><span class="token punctuation">,</span> <span class="token comment">// 默认语言</span>
-  messages<span class="token operator">:</span> <span class="token function">getLangAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token literal-property property">legacy</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 使用Composition API，这里必须设置为false</span>
+  <span class="token literal-property property">globalInjection</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">global</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">locale</span><span class="token operator">:</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'language'</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">'zh-CN'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">fallbackLocale</span><span class="token operator">:</span> <span class="token string">'zh-CN'</span><span class="token punctuation">,</span> <span class="token comment">// 默认语言</span>
+  <span class="token literal-property property">messages</span><span class="token operator">:</span> <span class="token function">getLangAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> i18n
 
 </code></pre></div><h4 id="_2-新建zh-cn-js-存放中文"><a href="#_2-新建zh-cn-js-存放中文" class="header-anchor">#</a> 2.新建zh-CN.js，存放中文</h4> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> Menus <span class="token operator">=</span> <span class="token punctuation">{</span>
-    userManage<span class="token operator">:</span> <span class="token string">&quot;用户管理&quot;</span><span class="token punctuation">,</span>
-    infoManage<span class="token operator">:</span> <span class="token string">&quot;信息管理&quot;</span><span class="token punctuation">,</span>
-    settings<span class="token operator">:</span> <span class="token string">&quot;设置&quot;</span><span class="token punctuation">,</span>
-    changeLanguage<span class="token operator">:</span> <span class="token string">&quot;英文&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">userManage</span><span class="token operator">:</span> <span class="token string">&quot;用户管理&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">infoManage</span><span class="token operator">:</span> <span class="token string">&quot;信息管理&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">settings</span><span class="token operator">:</span> <span class="token string">&quot;设置&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">changeLanguage</span><span class="token operator">:</span> <span class="token string">&quot;英文&quot;</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> userTable <span class="token operator">=</span> <span class="token punctuation">{</span>
-    nickname<span class="token operator">:</span> <span class="token string">&quot;昵称&quot;</span><span class="token punctuation">,</span>
-    phoneNumber<span class="token operator">:</span> <span class="token string">&quot;手机号&quot;</span><span class="token punctuation">,</span>
-    sex<span class="token operator">:</span> <span class="token string">&quot;性别&quot;</span><span class="token punctuation">,</span>
-    address<span class="token operator">:</span> <span class="token string">&quot;地址&quot;</span><span class="token punctuation">,</span>
-    online<span class="token operator">:</span> <span class="token string">&quot;是否在线&quot;</span><span class="token punctuation">,</span>
-    action<span class="token operator">:</span> <span class="token string">&quot;操作&quot;</span>
+    <span class="token literal-property property">nickname</span><span class="token operator">:</span> <span class="token string">&quot;昵称&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">phoneNumber</span><span class="token operator">:</span> <span class="token string">&quot;手机号&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">sex</span><span class="token operator">:</span> <span class="token string">&quot;性别&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">&quot;地址&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">online</span><span class="token operator">:</span> <span class="token string">&quot;是否在线&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">action</span><span class="token operator">:</span> <span class="token string">&quot;操作&quot;</span>
 <span class="token punctuation">}</span>
 <span class="token comment">// 按功能模块导出</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
@@ -117,18 +117,18 @@
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 </code></pre></div><h4 id="_3-新建en-us-js-存放英文"><a href="#_3-新建en-us-js-存放英文" class="header-anchor">#</a> 3.新建en-US.js，存放英文</h4> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> Menus <span class="token operator">=</span> <span class="token punctuation">{</span>
-    userManage<span class="token operator">:</span> <span class="token string">&quot;User management&quot;</span><span class="token punctuation">,</span>
-    infoManage<span class="token operator">:</span> <span class="token string">&quot;Information management&quot;</span><span class="token punctuation">,</span>
-    settings<span class="token operator">:</span> <span class="token string">&quot;Settings&quot;</span><span class="token punctuation">,</span>
-    changeLanguage<span class="token operator">:</span> <span class="token string">&quot;Chinese&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">userManage</span><span class="token operator">:</span> <span class="token string">&quot;User management&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">infoManage</span><span class="token operator">:</span> <span class="token string">&quot;Information management&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">settings</span><span class="token operator">:</span> <span class="token string">&quot;Settings&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">changeLanguage</span><span class="token operator">:</span> <span class="token string">&quot;Chinese&quot;</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> userTable <span class="token operator">=</span> <span class="token punctuation">{</span>
-    nickname<span class="token operator">:</span> <span class="token string">&quot;nickname&quot;</span><span class="token punctuation">,</span>
-    phoneNumber<span class="token operator">:</span> <span class="token string">&quot;Mobile Phone&quot;</span><span class="token punctuation">,</span>
-    sex<span class="token operator">:</span> <span class="token string">&quot;sex&quot;</span><span class="token punctuation">,</span>
-    address<span class="token operator">:</span> <span class="token string">&quot;Address&quot;</span><span class="token punctuation">,</span>
-    online<span class="token operator">:</span> <span class="token string">&quot;Online&quot;</span><span class="token punctuation">,</span>
-    action<span class="token operator">:</span> <span class="token string">&quot;Action&quot;</span>
+    <span class="token literal-property property">nickname</span><span class="token operator">:</span> <span class="token string">&quot;nickname&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">phoneNumber</span><span class="token operator">:</span> <span class="token string">&quot;Mobile Phone&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">sex</span><span class="token operator">:</span> <span class="token string">&quot;sex&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">&quot;Address&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">online</span><span class="token operator">:</span> <span class="token string">&quot;Online&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">action</span><span class="token operator">:</span> <span class="token string">&quot;Action&quot;</span>
 <span class="token punctuation">}</span>
 <span class="token comment">// 按功能模块导出</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
@@ -158,7 +158,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token operator">&lt;</span>script setup<span class="token operator">&gt;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> useI18n <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vue-i18n&quot;</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token punctuation">{</span> locale <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span> useScope<span class="token operator">:</span> <span class="token string">&quot;global&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> locale <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">useScope</span><span class="token operator">:</span> <span class="token string">&quot;global&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">function</span> <span class="token function">changeLanguage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'language'</span><span class="token punctuation">,</span> locale<span class="token punctuation">.</span>value <span class="token operator">===</span> <span class="token string">&quot;en-US&quot;</span><span class="token operator">?</span> <span class="token string">&quot;zh-CN&quot;</span><span class="token operator">:</span><span class="token string">&quot;en-US&quot;</span><span class="token punctuation">)</span>
   router<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
@@ -181,6 +181,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener norefferrer">浙ICP备2020034072号-1</a>
           </span></div></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.47a341f0.js" defer></script><script src="/assets/js/9.4003617a.js" defer></script><script src="/assets/js/1.a6555c94.js" defer></script><script src="/assets/js/2.33948fd8.js" defer></script><script src="/assets/js/19.406229a4.js" defer></script>
+    <script src="/assets/js/app.84408714.js" defer></script><script src="/assets/js/9.e81049ae.js" defer></script><script src="/assets/js/1.f7638bb1.js" defer></script><script src="/assets/js/2.49785e8d.js" defer></script><script src="/assets/js/19.7e9c6993.js" defer></script>
   </body>
 </html>
